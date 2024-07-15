@@ -1,9 +1,10 @@
-import React, { useEffect, useRef, useId, forwardRef, useImperativeHandle } from 'react';
+import React, { useEffect, useRef, forwardRef, useImperativeHandle } from 'react';
 import { getBoundingClientRect, getClinetXY, useEvent } from '../utils';
 
 import { SignatureCanvasRef, SignatureProps } from '.';
 import { useDispatch } from '../store';
 import { useOptionDispatch } from '../options';
+import { useIdCustom } from '../useIdCustom';
 
 export const defaultStyle: React.CSSProperties = {
   '--w-signature-background': '#fff',
@@ -28,7 +29,7 @@ export const Signature = forwardRef<SignatureCanvasRef, SignatureProps>((props, 
   const $path = useRef<SVGPathElement>();
   const pointsRef = useRef<number[][]>();
   const pointCount = useRef<number>(0);
-  const pointId = useId();
+  const pointId = useIdCustom();
   const dispatch = useDispatch();
   const dispatchOption = useOptionDispatch();
   useImperativeHandle<SignatureCanvasRef, SignatureCanvasRef>(

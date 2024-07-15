@@ -1,7 +1,8 @@
-import React, { useEffect, useRef, useId, forwardRef, useImperativeHandle } from 'react';
+import React, { useEffect, useRef, forwardRef, useImperativeHandle } from 'react';
 import { getBoundingClientRect, getClinetXY, defaultStyle, useEvent } from './utils';
 import { useDispatch } from './store';
 import { SignatureRef, SignatureProps } from './';
+import { useIdCustom } from './useIdCustom';
 
 export const Signature = forwardRef<SignatureRef, Omit<SignatureProps, 'defaultPoints' | 'renderPath' | 'options'>>(
   (props, ref) => {
@@ -11,7 +12,7 @@ export const Signature = forwardRef<SignatureRef, Omit<SignatureProps, 'defaultP
     const $path = useRef<SVGPathElement>();
     const pointsRef = useRef<number[][]>();
     const pointCount = useRef<number>(0);
-    const pointId = useId();
+    const pointId = useIdCustom();
     const dispatch = useDispatch();
     useImperativeHandle<SignatureRef, SignatureRef>(
       ref,

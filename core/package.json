@@ -1,13 +1,14 @@
 {
-  "name": "anv-react-signature",
+  "name": "@platform/anv-react-signature",
   "version": "1.3.1",
   "description": "A signature board component for react.",
   "author": "Kenny Wong <wowohoo@qq.com>",
-  "homepage": "https://uiwjs.github.io/react-signature",
-  "funding": "https://jaywcjlove.github.io/#/sponsor",
+  "publishConfig": {
+    "@platform:registry": "https://gitlab.anvilar.com/api/v4/projects/67/packages/npm/"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Kol007/react-signature.git"
+    "url": "https://gitlab.anvilar.com/platform/common-modules/anv-react-signature.git"
   },
   "license": "MIT",
   "main": "./cjs/index.js",
@@ -34,9 +35,6 @@
     "esm",
     "src"
   ],
-  "publishConfig": {
-    "access": "public"
-  },
   "keywords": [
     "react-signature",
     "react.js",

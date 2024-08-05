@@ -1,5 +1,9 @@
 {
+  "name": "@platform/anv-react-signature",
   "private": true,
+  "publishConfig": {
+    "@platform:registry": "https://gitlab.anvilar.com/api/v4/projects/67/packages/npm/"
+  },
   "scripts": {
     "⬇️⬇️⬇️⬇️⬇️ package ⬇️⬇️⬇️⬇️⬇️": "▼▼▼▼▼ package ▼▼▼▼▼",
     "build": "lerna exec --scope @uiw/* -- tsbb build src/*.tsx --use-babel --cjs cjs --bail",
